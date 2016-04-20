@@ -27,6 +27,8 @@ and put in one line with the fully-qualified name of your `IMilterHandlerFactory
 You may put in comment lines starting with `#`.
 6. Configure your filter runner as specified on its page.
 
+An example filter is provided at [sendmail-log-milter](https://github.com/mopano/sendmail-log-milter).
+
 ## Implementing IMilterHandler
 
 Although the JavaDocs should be documented well enough, here's a run-down of the API you will need to know.
