@@ -33,6 +33,7 @@ Although the JavaDocs should be documented well enough, here's a run-down of the
 You can find them on the [gh-pages](https://mopano.github.io/sendmail-filter-api) branch.
 
 #### From the IMilterHandler interface
+
 ```
     public IMilterStatus connect(String hostname, InetAddress hostaddr, Properties properties);
     public IMilterStatus helo(String helohost, Properties properties);
@@ -52,13 +53,24 @@ You can find them on the [gh-pages](https://mopano.github.io/sendmail-filter-api
     public int negotiateVersion(int mtaVersion, int actionFlags, int protocolFlags);
     public Map<Integer, Set<String>> getMacros();
 ```
+
 Of these the only ones you are required to implement are `getActionFlags` and `negotiateVersion`.
 Everything else can be inherited from `AMilterHandlerAdapter`.
 
 Although presuming the values of `argv` in `envfrom`, `envrcpt`, and the name and value in the `header`
 calls to be of ASCII-compatible encoding is generally safe, you are given the option to decode it to a
 String on your own. The easiest way is using `new String(value)`. Headers however may come with values
-encoded using [RFC 2047](https://www.ietf.org/rfc/rfc2047.txt.pdf),
-[RFC 2231](https://www.ietf.org/rfc/rfc2231.txt.pdf) or even just unspecified non-ASCII, which
+encoded using [RFC 2047](https://tools.ietf.org/html/rfc2047),
+[RFC 2231](https://tools.ietf.org/html/rfc2231) or even just unspecified non-ASCII, which
 is the most unpredictable case, so instead of sending you potentially malformed String data, the API
-gives you the raw string data.
+gives you the raw string data. For example Postfix with SMTPUTF8 extension *currently* does not convert
+the character data to ASCII before sending it to a milter, and there is no guarantee a previous mail
+filter will not change headers to a different format.
+
+## TODO:
+
+ * Add tools for safe string reading and decoding. Must also output quoted-printable, etc.
+The `javax.mail` packages and Apache Commons libraries offer deprecated format parsing, that does not
+support non-ascii recipients or domains. Separate RFC support level.
+ * Add tools for parsing email addresses.
+ * Think of more common necessary tools that can join this package.

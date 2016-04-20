@@ -12,19 +12,19 @@ permitted only if each of the following conditions of 1-6 are met:
 1. Redistributions of the Software qualify as "freeware" or "open
    source software" under one of the following terms:
 
-   (a) Redistributions are made at no charge beyond the reasonable
-       cost of materials and delivery; or
+   1. Redistributions are made at no charge beyond the reasonable
+   cost of materials and delivery; or
 
-   (b) Redistributions are accompanied by a copy of the modified
-       Source Code (on an acceptable machine-readable medium) or by an
-       irrevocable offer to provide a copy of the modified Source Code
-       (on an acceptable machine-readable medium) for up to three years
-       at the cost of materials and delivery. Such redistributions must
-       allow further use, modification, and redistribution of the Source
-       Code under substantially the same terms as this license. For
-       the purposes of redistribution "Source Code" means the complete
-       human-readable, compilable, linkable, and operational source
-       code of the redistributed module(s) including all modifications.
+   2. Redistributions are accompanied by a copy of the modified
+   Source Code (on an acceptable machine-readable medium) or by an
+   irrevocable offer to provide a copy of the modified Source Code
+   (on an acceptable machine-readable medium) for up to three years
+   at the cost of materials and delivery. Such redistributions must
+   allow further use, modification, and redistribution of the Source
+   Code under substantially the same terms as this license. For
+   the purposes of redistribution "Source Code" means the complete
+   human-readable, compilable, linkable, and operational source
+   code of the redistributed module(s) including all modifications.
 
 2. Redistributions of the Software Source Code must retain the
    copyright notices as they appear in each Source Code file, these
